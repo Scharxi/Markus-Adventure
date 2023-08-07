@@ -935,6 +935,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NPC
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39bb28e0dc3549638ee05c4c5a25ece
+      internalID: -405878209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_Closed
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10166778a012e410a8df1dff7a2bc7ea
+      internalID: -472912966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_Empty
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766c75fbff60744899e93ea9a4b63584
+      internalID: -1950296381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_Full
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ff82cff80f44bc09031df3940e7275
+      internalID: 11266659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -948,6 +1032,9 @@ TextureImporter:
     nameFileIdTable:
       Blue_Fountain_0: 1153885818
       Blue_Fountain_1: -144696676
+      Chest_Closed: -472912966
+      Chest_Empty: -1950296381
+      Chest_Full: 11266659
       Floor_0: -60981632
       Floor_1: 2022114513
       Floor_10: -688643370
@@ -968,6 +1055,7 @@ TextureImporter:
       Green_Fountain_0: 895087860
       Green_Fountain_1: 72349845
       Markus_0: -1356715434
+      NPC: -405878209
       Skull_0: -120686328
       Stairs_0: -1359822842
       Stairs_1: 1791233529
