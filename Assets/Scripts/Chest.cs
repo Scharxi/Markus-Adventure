@@ -9,9 +9,12 @@ public class Chest : Collectable
     {
         if (!_collected)
         {
-            _collected = true;
-            GetComponent<SpriteRenderer>().sprite = emptyChest; 
-            Debug.Log("Grant pesos: " + pesosAmount);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _collected = true;
+                GetComponent<SpriteRenderer>().sprite = emptyChest; 
+                Debug.Log("Grant pesos: " + pesosAmount);
+            }
         }
     }
 }
