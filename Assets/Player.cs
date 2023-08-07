@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     private BoxCollider2D _collider2D;
     private Vector3 _moveDelta;
+    private RaycastHit2D _hit;
 
 
     // Start is called before the first frame update
@@ -34,9 +35,28 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
+        // make sure we can move in this direction, by casting a box there first, if the box returns null, we can move
+        _hit = Physics2D.BoxCast(transform.position, _collider2D.size, 0, new Vector2(0, _moveDelta.y),
+            MathF.Abs(_moveDelta.y * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
+
+        // check if the player collides with something 
+        if (!_hit)
+        {
+            // Move the player
+            transform.Translate(0, _moveDelta.y * Time.deltaTime, 0);
+        }
         
-        // Move the player
-        transform.Translate(_moveDelta * Time.deltaTime);
+        // make sure we can move in this direction, by casting a box there first, if the box returns null, we can move
+        _hit = Physics2D.BoxCast(transform.position, _collider2D.size, 0, new Vector2(_moveDelta.x, 0),
+            MathF.Abs(_moveDelta.x * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
+
+        // check if the player collides with something 
+        if (!_hit)
+        {
+            // Move the player
+            transform.Translate(_moveDelta.x * Time.deltaTime, 0, 0);
+        }
     }
 
     // Update is called once per frame
