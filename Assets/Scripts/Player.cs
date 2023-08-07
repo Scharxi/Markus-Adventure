@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        _moveDelta = new(x, y, 0);
+        _moveDelta = new Vector3(x, y, 0);
+        _moveDelta.Normalize();
 
         // Swap sprite direction based on the direction the player is moving 
         if (_moveDelta.x > 0)
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
             // Move the player
             transform.Translate(0, _moveDelta.y * Time.deltaTime, 0);
         }
-        
+
         // make sure we can move in this direction, by casting a box there first, if the box returns null, we can move
         _hit = Physics2D.BoxCast(transform.position, _collider2D.size, 0, new Vector2(_moveDelta.x, 0),
             MathF.Abs(_moveDelta.x * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
