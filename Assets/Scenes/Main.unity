@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 775775097}
   - component: {fileID: 775775096}
   - component: {fileID: 775775095}
+  - component: {fileID: 775775099}
   m_Layer: 7
   m_Name: Markus
   m_TagString: Fighter
@@ -647,7 +648,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.16, y: 0.23}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -697,7 +698,7 @@ SpriteRenderer:
   m_SortingLayerID: -1760137147
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1356715434, guid: e46df7b9f36cc444c8b9cd1e7daf3279, type: 3}
+  m_Sprite: {fileID: 1914947105, guid: 391b9227edc334228a360e148b1fc344, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -724,6 +725,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &775775099
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775775094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2fcfba8f7aee49d19d6c085e5bb0a31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &819580416
 GameObject:
   m_ObjectHideFlags: 0

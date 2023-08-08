@@ -8,6 +8,7 @@ public abstract class Mover : Fighter
     protected BoxCollider2D _collider2D;
     protected Vector3 _moveDelta;
     protected RaycastHit2D _hit;
+    protected Animator _animator;
 
     protected float ySpeed = 0.75f;
     protected float xSpeed = 1.0f;
@@ -17,6 +18,7 @@ public abstract class Mover : Fighter
     protected virtual void Start()
     {
         _collider2D = GetComponent<BoxCollider2D>();
+        _animator = GetComponent<Animator>();
     }
 
     protected virtual void UpdateMotor(Vector3 input)
@@ -33,10 +35,13 @@ public abstract class Mover : Fighter
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        
+
+        var isMoving = _moveDelta.sqrMagnitude > 0;
+        _animator.SetBool("isWalking", isMoving);
+
         // Add push Vector, if any 
-        _moveDelta += pushDirection; 
-        
+        _moveDelta += pushDirection;
+
         // reduce the push force every frame, based on the recovery speed 
         pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
 
