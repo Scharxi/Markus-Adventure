@@ -13,6 +13,7 @@ public class Weapon : Collideable
     private SpriteRenderer _renderer;
 
     // Swing 
+    private Animator _anim; 
     private float _coolDown = 0.5f;
     private float _lastSwing;
 
@@ -21,6 +22,7 @@ public class Weapon : Collideable
     {
         base.Start();
         _renderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,6 @@ public class Weapon : Collideable
 
     private void Swing()
     {
-        Debug.Log("Sword swong.");
+        _anim.SetTrigger("Swing");
     }
 }
