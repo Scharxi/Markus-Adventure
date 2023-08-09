@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 398302810}
   - component: {fileID: 398302809}
   - component: {fileID: 398302812}
+  - component: {fileID: 398302813}
   m_Layer: 7
   m_Name: Little_Ghost
   m_TagString: Fighter
@@ -155,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00012333691, y: 0.014695931}
+  m_Offset: {x: 0.00012333691, y: 0.014002755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07245669, y: 0.061915927}
+  m_Size: {x: 0.07245669, y: 0.061425958}
   m_EdgeRadius: 0
 --- !u!212 &398302810
 SpriteRenderer:
@@ -254,6 +255,26 @@ MonoBehaviour:
   xpValue: 1
   triggerLength: 0.3
   chaseLength: 1
+--- !u!95 &398302813
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398302808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d1cb7a5e7eae409c86ccb0c94ff3a71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &442065846
 GameObject:
   m_ObjectHideFlags: 0
@@ -13470,7 +13491,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.001856491, y: 0.015741784}
+  m_Offset: {x: -0.001856491, y: 0.014426984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
