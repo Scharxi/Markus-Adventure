@@ -50,6 +50,7 @@ public class Enemy : Mover
         else
         {
             UpdateMotor(startingPosition - transform.position);
+            _animator.SetBool("isWalking", false);
             chasing = false;
         }
 
