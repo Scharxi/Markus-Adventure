@@ -1,18 +1,16 @@
 using System;
 using UnityEngine;
-using UnityEngine.TerrainTools;
-
 
 public abstract class Mover : Fighter
 {
     protected BoxCollider2D _collider2D;
     protected Vector3 _moveDelta;
     protected RaycastHit2D _hit;
-    protected Animator _animator;
 
     protected float ySpeed = 0.75f;
     protected float xSpeed = 1.0f;
 
+    protected Animator _animator; 
 
     // Start is called before the first frame update
     protected virtual void Start()

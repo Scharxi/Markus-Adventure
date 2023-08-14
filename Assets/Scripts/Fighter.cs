@@ -19,9 +19,9 @@ public class Fighter : MonoBehaviour
             lastImmune = Time.time;
             hitPoints -= damage.damageAmount;
             pushDirection = (transform.position - damage.origin).normalized * damage.pushForce;
-            
+
             // TODO: Play Hit Animation
-            
+
             if (hitPoints <= 0)
             {
                 hitPoints = 0;
