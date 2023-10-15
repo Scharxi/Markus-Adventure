@@ -24,15 +24,7 @@ public abstract class Mover : Fighter
         _moveDelta = new Vector3(input.x * xSpeed, input.y * ySpeed);
         _moveDelta.Normalize();
 
-        // Swap sprite direction based on the direction the player is moving 
-        if (_moveDelta.x > 0)
-        {
-            transform.localScale = Vector3.one;
-        }
-        else if (_moveDelta.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        AdjustSpriteDirection();
 
         var isMoving = _moveDelta.sqrMagnitude > 0;
         _animator.SetBool("isWalking", isMoving);
@@ -64,6 +56,19 @@ public abstract class Mover : Fighter
             // Move the player
             transform.Translate(_moveDelta.x * Time.deltaTime, 0, 0);
             // transform.position = Vector3.MoveTowards(transform.position, _moveDelta, xSpeed * Time.deltaTime);
+        }
+    }
+
+    public virtual void AdjustSpriteDirection()
+    {
+        // Swap sprite direction based on the direction the player is moving 
+        if (_moveDelta.x > 0)
+        {
+            transform.localScale = Vector3.one;
+        }
+        else if (_moveDelta.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }

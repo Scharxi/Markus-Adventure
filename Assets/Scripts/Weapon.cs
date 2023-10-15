@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Weapon : Collideable
 {
@@ -11,6 +12,7 @@ public class Weapon : Collideable
     public int weaponLevel = 0;
 
     private SpriteRenderer _renderer;
+    [SerializeField] private InputActionReference attack; 
 
     // Swing 
     private Animator _anim; 
@@ -29,7 +31,7 @@ public class Weapon : Collideable
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (attack.action.IsPressed())
         {
             if (Time.time - _lastSwing > _coolDown)
             {

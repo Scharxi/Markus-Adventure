@@ -138,5 +138,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  Interact: {fileID: -8931635417420435802, guid: 62e736193eda1461ba4dc2b782936483, type: 3}
   emptyChest: {fileID: -1950296381, guid: e46df7b9f36cc444c8b9cd1e7daf3279, type: 3}
   pesosAmount: 10
