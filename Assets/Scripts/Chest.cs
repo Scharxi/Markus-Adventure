@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Chest : Collectable
@@ -9,7 +10,7 @@ public class Chest : Collectable
     {
         if (!_collected)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Interact.action.IsPressed())
             {
                 _collected = true;
                 GetComponent<SpriteRenderer>().sprite = emptyChest; 

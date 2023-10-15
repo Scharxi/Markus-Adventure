@@ -3,33 +3,34 @@ using UnityEngine;
 
 public class Enemy : Mover
 {
-    public int xpValue = 1;
+    public int xpValue = 1; // The experience points granted by defeating this enemy.
 
-    public float triggerLength = 1;
-    public float chaseLength = 5;
+    public float triggerLength = 1; // The distance at which the enemy begins to chase the player.
+    public float chaseLength = 5; // The maximum distance the enemy can chase the player.
 
-    private bool chasing;
-    private bool collidingWithPlayer;
-    private Transform playerTransform;
-    private Vector3 startingPosition;
+    private bool chasing; // Indicates whether the enemy is currently chasing the player.
+    private bool collidingWithPlayer; // Indicates if the enemy is colliding with the player.
+    private Transform playerTransform; // Reference to the player's transform.
+    private Vector3 startingPosition; // The enemy's starting position.
 
-    private ContactFilter2D filter;
-    private BoxCollider2D hitBox;
-    private Collider2D[] hits = new Collider2D[10];
+    private ContactFilter2D filter; // Filter for collision checks.
+    private BoxCollider2D hitBox; // The enemy's hitbox collider.
+    private Collider2D[] hits = new Collider2D[10]; // Array for storing colliders.
 
     protected override void Start()
     {
         base.Start();
-        playerTransform = GameObject.Find("Markus").transform;
-        startingPosition = transform.position;
-        hitBox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        playerTransform = GameObject.Find("Markus").transform; // Find and reference the player's transform.
+        startingPosition = transform.position; // Store the starting position of the enemy.
+        hitBox = transform.GetChild(0).GetComponent<BoxCollider2D>(); // Get the hitbox collider from child objects.
     }
 
     private void FixedUpdate()
     {
-        // check if the player is in range
+        // Check if the player is in range to engage with the enemy.
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
         {
+            // Check if the player is within the trigger range.
             if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLength)
             {
                 chasing = true;
@@ -39,22 +40,25 @@ public class Enemy : Mover
             {
                 if (!collidingWithPlayer)
                 {
+                    // Update the enemy's movement towards the player.
                     UpdateMotor((playerTransform.position - transform.position).normalized);
                 }
                 else
                 {
+                    // If colliding with the player, stop chasing and move back to the starting position.
                     UpdateMotor(startingPosition - transform.position);
                 }
             }
         }
         else
         {
+            // If the player is out of chase range, move back to the starting position.
             UpdateMotor(startingPosition - transform.position);
-            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false); // Set the "isWalking" animation parameter to false.
             chasing = false;
         }
 
-        // check for overlapping 
+        // Check for collisions with the player.
         collidingWithPlayer = false;
         _collider2D.OverlapCollider(filter, hits);
         for (var i = 0; i < hits.Length; i++)
@@ -66,6 +70,7 @@ public class Enemy : Mover
 
             if (hits[i].CompareTag("Fighter") && hits[i].name == "Markus")
             {
+                // Set collidingWithPlayer to true if colliding with the player.
                 collidingWithPlayer = true;
             }
 
@@ -75,8 +80,8 @@ public class Enemy : Mover
 
     protected override void Death()
     {
-        Destroy(gameObject);
-        // TODO: Enemy Death Animation
+        Destroy(gameObject); // Destroy the enemy object when it dies.
+        // TODO: Enemy Death Animation 
         // TODO: Drop Loot 
         // TODO: Give Player Experience 
     }
